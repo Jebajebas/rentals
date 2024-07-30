@@ -1,0 +1,18 @@
+[
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Type",
+  "is_standard": 1,
+  "modified": "2024-07-17 11:44:09.522835",
+  "name": "Tata"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Vehicle Type",
+  "is_standard": 1,
+  "modified": "2024-07-17 11:44:03.634148",
+  "name": "Hyundai"
+ }
+]

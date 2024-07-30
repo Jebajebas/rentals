@@ -5,7 +5,9 @@ app_description = "Manage Rentals in Frappe"
 app_email = "jeba.j@arus.co.in"
 app_license = "mit"
 # required_apps = []
-
+#fixtures = ["Vehicle Type"] for exporting all feilds
+fixtures = [{"dt" : "Vehicle Type",
+             "filters" : {"is_standard":1}},"Workflow"]
 # Includes in <head>
 # ------------------
 
@@ -102,9 +104,9 @@ app_license = "mit"
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"Vehicle": "rentals.api.get_query_conditions_for_vehicle",
+}
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
@@ -130,6 +132,12 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+    "ToDo" : {
+            "before_insert" : "rentals.api.throw_emoji"
+            }
+        }
+
 # Scheduled Tasks
 # ---------------
 
@@ -150,7 +158,13 @@ app_license = "mit"
 # 		"rentals.tasks.monthly"
 # 	],
 # }
-
+scheduler_events = {
+    "Cron" : { #crontab in browser
+        "30 3 * * 3" : [ #date day time expression 
+            "rentals.api.send_payment_remainders"
+        ]
+    }
+}
 # Testing
 # -------
 
