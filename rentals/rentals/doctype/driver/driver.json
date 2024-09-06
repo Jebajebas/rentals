@@ -6,7 +6,7 @@
  "creation": "2024-07-02 11:33:23.783168",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": [
+ "field_order": [    
   "enabled",
   "first_name",
   "license_number",
