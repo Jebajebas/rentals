@@ -29,7 +29,7 @@
    "in_list_view": 1,
    "label": "First Name",
    "reqd": 1
-  },
+  },    
   {
    "fieldname": "license_number",
    "fieldtype": "Data",
